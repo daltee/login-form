@@ -13,7 +13,9 @@
     <div class="page-shell">
         <main class="portal-card">
             <header class="portal-header">
-                <img src="images/image.png" alt="MUST Logo" class="portal-logo">
+                <div class="logo-frame">
+                    <img src="images/image.png" alt="MUST Logo" class="portal-logo">
+                </div>
                 <h1 class="portal-title">Application Portal</h1>
                 <p class="portal-subtitle">Mbarara University of Science and Technology</p>
             </header>
@@ -32,7 +34,13 @@
 
                     <div class="form-group">
                         <label for="login-password">Password</label>
-                        <input type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" required>
+                        <div class="password-wrap">
+                            <input type="password" id="login-password" placeholder="Enter your password" autocomplete="current-password" required>
+                            <button type="button" class="toggle-password" aria-label="Show password" data-target="login-password">
+                                <svg class="icon-eye" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+                                <svg class="icon-eye-off" viewBox="0 0 24 24" hidden><path d="M17.94 17.94A10.07 10.07 0 0 1 12 20c-7 0-11-8-11-8a18.45 18.45 0 0 1 5.06-5.94M9.9 4.24A9.12 9.12 0 0 1 12 4c7 0 11 8 11 8a18.5 18.5 0 0 1-2.16 3.19m-6.72-1.07a3 3 0 1 1-4.24-4.24"/><line x1="1" y1="1" x2="23" y2="23"/></svg>
+                            </button>
+                        </div>
                     </div>
 
                     <div class="options">
@@ -52,5 +60,18 @@
             &copy; 2026 Mutebi Dalton | SWE. All rights reserved.
         </footer>
     </div>
+
+    <script>
+      document.querySelectorAll('.toggle-password').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const input = document.getElementById(btn.dataset.target);
+          const showing = input.type === 'text';
+          input.type = showing ? 'password' : 'text';
+          btn.querySelector('.icon-eye').hidden = !showing;
+          btn.querySelector('.icon-eye-off').hidden = showing;
+          btn.setAttribute('aria-label', showing ? 'Show password' : 'Hide password');
+        });
+      });
+    </script>
 </body>
 </html>
