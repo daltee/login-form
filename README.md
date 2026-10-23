@@ -1,17 +1,17 @@
-# MUST Application Portal — Login & Signup
+# MUST Application Portal - Login & Signup
 
 A simple, glassmorphic **login** and **create account** interface for the Mbarara University of Science and Technology (MUST) Application Portal.
 
-Built with **HTML and CSS only** — no JavaScript frameworks.
+Built with **HTML and CSS only** - no JavaScript frameworks.
 
 ## Pages
 
-| File | Description |
-|------|-------------|
-| `index.html` | Login page (student number / email + password) |
+| File            | Description                                           |
+| --------------- | ----------------------------------------------------- |
+| `index.html`  | Login page (student number / email + password)        |
 | `signup.html` | Registration page (name, contact, program, passwords) |
-| `style.css` | Shared glassmorphic styles |
-| `images/` | MUST logo asset |
+| `style.css`   | Shared glassmorphic styles                            |
+| `images/`     | MUST logo asset                                       |
 
 ## Features
 
@@ -24,7 +24,7 @@ Built with **HTML and CSS only** — no JavaScript frameworks.
 ## How to run
 
 1. Clone or download this repository
-2. Open `index.html` in a browser  
+2. Open `index.html` in a browser
    (or use Live Server in VS Code)
 
 No build step or dependencies required.
@@ -36,5 +36,5 @@ No build step or dependencies required.
 
 ## Author
 
-**Mutebi Dalton** — Software Engineer  
+**Mutebi Dalton** - Software Engineer
 © 2026
