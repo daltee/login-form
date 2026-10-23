@@ -1,3 +1,9 @@
+/* ============================================
+   MUST Application Portal — shared styles
+   Glassmorphic login / signup UI (HTML + CSS)
+   ============================================ */
+
+/* Design tokens */
 :root {
   --gold: #fbc02d;
   --ink: #17213f;
@@ -6,6 +12,7 @@
   --glass-card: rgba(255, 255, 255, 0.18);
 }
 
+/* Reset + base font */
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +20,7 @@
   font-family: "Segoe UI", system-ui, sans-serif;
 }
 
+/* Full-viewport centered layout */
 body {
   min-height: 100vh;
   display: flex;
@@ -23,6 +31,7 @@ body {
   overflow-x: hidden;
 }
 
+/* Soft blurred orbs behind the card */
 .shape {
   position: fixed;
   border-radius: 50%;
@@ -41,6 +50,7 @@ body {
   background: rgba(42, 54, 134, 0.55);
 }
 
+/* Content wrapper sits above ambient shapes */
 .page-shell {
   position: relative;
   z-index: 1;
@@ -48,6 +58,7 @@ body {
   max-width: 440px;
 }
 
+/* Main glass card */
 .portal-card {
   border-radius: 24px;
   border: 1px solid var(--line);
@@ -63,6 +74,7 @@ body {
   text-align: center;
 }
 
+/* Circular glass frame around the logo */
 .logo-frame {
   width: 108px; height: 108px;
   margin: 0 auto 18px;
@@ -95,6 +107,7 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
+/* Login / Create Account tabs */
 .tab-headers {
   display: flex;
   margin: 0 32px 28px;
@@ -120,6 +133,7 @@ body {
   border-bottom-color: var(--gold);
 }
 
+/* Form layout */
 .form-panel { padding: 0 32px 36px; }
 .form-group { margin-bottom: 20px; }
 .form-row { display: flex; gap: 16px; }
@@ -133,6 +147,7 @@ label {
   color: rgba(255, 255, 255, 0.85);
 }
 
+/* Shared field styles */
 input, select {
   width: 100%;
   padding: 13px 16px;
@@ -153,6 +168,7 @@ input:focus, select:focus {
   box-shadow: 0 0 0 3px rgba(251, 192, 45, 0.15);
 }
 
+/* Custom select arrow */
 select {
   appearance: none;
   cursor: pointer;
@@ -165,6 +181,7 @@ select {
 
 select option { background: #1e1b4b; color: #fff; }
 
+/* Remember me + Forgot password row (login only) */
 .options {
   display: flex;
   align-items: center;
@@ -194,6 +211,7 @@ select option { background: #1e1b4b; color: #fff; }
 }
 .forgot:hover { text-decoration: underline; }
 
+/* Primary action button */
 .submit-btn {
   width: 100%;
   padding: 15px;
@@ -219,6 +237,7 @@ select option { background: #1e1b4b; color: #fff; }
   color: rgba(255, 255, 255, 0.5);
 }
 
+/* Mobile: stack form rows, tighten padding */
 @media (max-width: 480px) {
   body { padding: 24px 16px; }
   .portal-header { padding: 32px 24px 16px; }
