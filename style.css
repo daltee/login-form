@@ -1,11 +1,9 @@
 :root {
-  --blue: #2a3686;
   --gold: #fbc02d;
   --ink: #17213f;
-  --muted: #64708d;
   --line: rgba(255, 255, 255, 0.35);
   --glass: rgba(255, 255, 255, 0.12);
-  --glass-strong: rgba(255, 255, 255, 0.18);
+  --glass-card: rgba(255, 255, 255, 0.18);
 }
 
 * {
@@ -21,12 +19,10 @@ body {
   align-items: center;
   justify-content: center;
   padding: 32px 20px;
-  color: var(--ink);
-  background: linear-gradient(145deg, #0f172a 0%, #1e1b4b 50%, #1a2b7c 100%);
+  background: linear-gradient(145deg, #0f172a, #1e1b4b 50%, #1a2b7c);
   overflow-x: hidden;
 }
 
-/* Soft ambient shapes */
 .shape {
   position: fixed;
   border-radius: 50%;
@@ -35,21 +31,16 @@ body {
   z-index: 0;
 }
 .shape-1 {
-  width: 320px;
-  height: 320px;
-  top: -100px;
-  left: -100px;
+  width: 320px; height: 320px;
+  top: -100px; left: -100px;
   background: rgba(251, 192, 45, 0.3);
 }
 .shape-2 {
-  width: 420px;
-  height: 420px;
-  right: -160px;
-  bottom: -180px;
+  width: 420px; height: 420px;
+  right: -160px; bottom: -180px;
   background: rgba(42, 54, 134, 0.55);
 }
 
-/* Main glass card */
 .page-shell {
   position: relative;
   z-index: 1;
@@ -60,7 +51,7 @@ body {
 .portal-card {
   border-radius: 24px;
   border: 1px solid var(--line);
-  background: var(--glass-strong);
+  background: var(--glass-card);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.25);
@@ -72,10 +63,8 @@ body {
   text-align: center;
 }
 
-/* Circular glass logo */
 .logo-frame {
-  width: 108px;
-  height: 108px;
+  width: 108px; height: 108px;
   margin: 0 auto 18px;
   border-radius: 50%;
   border: 1px solid var(--line);
@@ -83,15 +72,13 @@ body {
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: grid;
+  place-items: center;
   overflow: hidden;
 }
 
 .portal-logo {
-  width: 78px;
-  height: 78px;
+  width: 78px; height: 78px;
   object-fit: contain;
   border-radius: 50%;
 }
@@ -108,7 +95,6 @@ body {
   color: rgba(255, 255, 255, 0.7);
 }
 
-/* Tabs */
 .tab-headers {
   display: flex;
   margin: 0 32px 28px;
@@ -125,7 +111,7 @@ body {
   color: rgba(255, 255, 255, 0.55);
   border-bottom: 3px solid transparent;
   margin-bottom: -1px;
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
 .tab-link:hover,
@@ -134,23 +120,10 @@ body {
   border-bottom-color: var(--gold);
 }
 
-/* Form */
-.form-panel {
-  padding: 0 32px 36px;
-}
-
-.form-group {
-  margin-bottom: 20px;
-}
-
-.form-row {
-  display: flex;
-  gap: 16px;
-}
-
-.form-row .form-group {
-  flex: 1;
-}
+.form-panel { padding: 0 32px 36px; }
+.form-group { margin-bottom: 20px; }
+.form-row { display: flex; gap: 16px; }
+.form-row .form-group { flex: 1; }
 
 label {
   display: block;
@@ -160,11 +133,7 @@ label {
   color: rgba(255, 255, 255, 0.85);
 }
 
-input[type="text"],
-input[type="email"],
-input[type="password"],
-input[type="tel"],
-select {
+input, select {
   width: 100%;
   padding: 13px 16px;
   border: 1px solid var(--line);
@@ -173,16 +142,12 @@ select {
   color: #fff;
   font-size: 0.95rem;
   outline: none;
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
-input::placeholder,
-select {
-  color: rgba(255, 255, 255, 0.45);
-}
+input::placeholder { color: rgba(255, 255, 255, 0.45); }
 
-input:focus,
-select:focus {
+input:focus, select:focus {
   border-color: rgba(251, 192, 45, 0.6);
   background: rgba(255, 255, 255, 0.16);
   box-shadow: 0 0 0 3px rgba(251, 192, 45, 0.15);
@@ -191,61 +156,15 @@ select:focus {
 select {
   appearance: none;
   cursor: pointer;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23ffffff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10l-5 5z'/%3E%3C/svg%3E");
+  color: rgba(255, 255, 255, 0.85);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23fff' viewBox='0 0 16 16'%3E%3Cpath d='M8 11L3 6h10z'/%3E%3C/svg%3E");
   background-repeat: no-repeat;
   background-position: right 16px center;
   padding-right: 40px;
 }
 
-select option {
-  background: #1e1b4b;
-  color: #fff;
-}
+select option { background: #1e1b4b; color: #fff; }
 
-/* Password field with reveal toggle */
-.password-wrap {
-  position: relative;
-}
-
-.password-wrap input {
-  padding-right: 48px;
-}
-
-.toggle-password {
-  position: absolute;
-  right: 10px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 34px;
-  height: 34px;
-  border: none;
-  border-radius: 8px;
-  background: transparent;
-  color: rgba(255, 255, 255, 0.6);
-  cursor: pointer;
-  display: grid;
-  place-items: center;
-  transition: 0.2s ease;
-  padding: 0;
-}
-
-.toggle-password:hover {
-  color: var(--gold);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.toggle-password svg {
-  width: 20px;
-  height: 20px;
-  display: block;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.75;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-/* Options row (login only) */
 .options {
   display: flex;
   align-items: center;
@@ -258,14 +177,12 @@ select option {
   align-items: center;
   gap: 8px;
   font-size: 0.88rem;
-  font-weight: 400;
   color: rgba(255, 255, 255, 0.7);
   cursor: pointer;
 }
 
 .remember-option input {
-  width: 16px;
-  height: 16px;
+  width: 16px; height: 16px;
   accent-color: var(--gold);
 }
 
@@ -275,12 +192,8 @@ select option {
   color: var(--gold);
   text-decoration: none;
 }
+.forgot:hover { text-decoration: underline; }
 
-.forgot:hover {
-  text-decoration: underline;
-}
-
-/* Button */
 .submit-btn {
   width: 100%;
   padding: 15px;
@@ -291,7 +204,7 @@ select option {
   font-size: 1rem;
   font-weight: 700;
   cursor: pointer;
-  transition: 0.25s ease;
+  transition: 0.25s;
 }
 
 .submit-btn:hover {
@@ -299,7 +212,6 @@ select option {
   box-shadow: 0 8px 20px rgba(251, 192, 45, 0.35);
 }
 
-/* Footer */
 .site-footer {
   margin-top: 24px;
   text-align: center;
@@ -307,36 +219,12 @@ select option {
   color: rgba(255, 255, 255, 0.5);
 }
 
-/* Mobile */
 @media (max-width: 480px) {
-  body {
-    padding: 24px 16px;
-  }
-
-  .portal-header {
-    padding: 32px 24px 16px;
-  }
-
-  .logo-frame {
-    width: 96px;
-    height: 96px;
-  }
-
-  .portal-logo {
-    width: 70px;
-    height: 70px;
-  }
-
-  .tab-headers {
-    margin: 0 24px 24px;
-  }
-
-  .form-panel {
-    padding: 0 24px 28px;
-  }
-
-  .form-row {
-    flex-direction: column;
-    gap: 0;
-  }
+  body { padding: 24px 16px; }
+  .portal-header { padding: 32px 24px 16px; }
+  .logo-frame { width: 96px; height: 96px; }
+  .portal-logo { width: 70px; height: 70px; }
+  .tab-headers { margin: 0 24px 24px; }
+  .form-panel { padding: 0 24px 28px; }
+  .form-row { flex-direction: column; gap: 0; }
 }
