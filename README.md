@@ -2,7 +2,7 @@
 
 A simple, glassmorphic **login** and **create account** interface for the Mbarara University of Science and Technology (MUST) Application Portal.
 
-Built with **HTML and CSS only** - no JavaScript frameworks.
+Built with **HTML and CSS**
 
 ## Pages
 
@@ -27,7 +27,6 @@ Built with **HTML and CSS only** - no JavaScript frameworks.
 2. Open `index.html` in a browser
    (or use Live Server in VS Code)
 
-No build step or dependencies required.
 
 ## Tech stack
 
